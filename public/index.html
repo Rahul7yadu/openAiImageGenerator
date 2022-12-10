@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai Image generation</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <form id="form">
+        <input id="prompt" class="prompt" placeholder="insert your prompt here"/>
+        <select id="size" class="button">
+            <option>small</option>
+            <option>medium</option>
+            <option>large</option>
+        </select>
+        <button type = "submit" class="button">generate</button>
+    </form>
+    <div class="image-container">
+
+        <img src="" alt="image not present" style="display:none" id="image"/>
+    </div>
+
+<div class="overlay" id="overlay">
+  <div class="spinner"></div>
+</div>
+</body>
+<script src="./index.js"></script>
+</html>
