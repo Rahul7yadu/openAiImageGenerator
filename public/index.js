@@ -27,6 +27,10 @@ EndOverlay()
    const img = document.getElementById('image')
    img.style.display='block'
    img.src = res.url
+    const button = document.createElement("a")
+    button.innerHTML = "open full image"
+    button.href= res.url;
+    document.body.appendChild(button);
 
    console.log(res.url)
 
@@ -36,6 +40,8 @@ EndOverlay()
 form.addEventListener('submit',onSubmit)
 
 function ShowOverlay(){
+   const img = document.getElementById('image')
+    img.style.display  = 'none'
     document.getElementById('overlay').style.display = 'block';
 }
 function EndOverlay(){
