@@ -4,6 +4,7 @@ const onSubmit= async (e)=>{
     e.preventDefault();
     const input = document.getElementById('prompt');
     const size = document.getElementById("size")
+    console.log(size.value)
     console.log(input.value)
     ShowOverlay();
     const response = await fetch('../openai/generateImage',{
@@ -16,8 +17,13 @@ const onSubmit= async (e)=>{
     'Content-Type': 'application/json'
   }
     })
-   const res =  await response.json()
+
+    if(!response.ok){
    EndOverlay()
+     return alert('sorry could not load image')
+ }
+   const res =  await response.json()
+EndOverlay()
    const img = document.getElementById('image')
    img.style.display='block'
    img.src = res.url
